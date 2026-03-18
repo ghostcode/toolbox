@@ -624,103 +624,112 @@
       },
       {
         id: 2,
-        name: 'Base64 编解码',
-        description: '文本与 Base64 格式互相转换，支持 UTF-8 编码，适用于简单加密场景。',
-        category: 'encoder',
-        tags: ['Base64', '编码'],
-        url: '#',
-        icon: 'code'
-      },
-      {
-        id: 3,
-        name: '时间戳转换',
-        description: '时间戳与日期格式互相转换，支持多种日期格式，开发调试必备工具。',
+        name: 'JSON 格式化',
+        description: 'JSON 数据格式化、压缩、校验，支持语法高亮显示，方便阅读和排查问题。',
         category: 'converter',
-        tags: ['时间', '转换'],
-        url: '#',
-        icon: 'clock'
+        tags: ['JSON', '格式化'],
+        url: 'https://json-formatter-flame-gamma.vercel.app/',
+        icon: 'json'
       },
-      {
-        id: 4,
-        name: '颜色转换器',
-        description: 'HEX、RGB、HSL 等颜色格式互相转换，实时预览色值效果。',
-        category: 'converter',
-        tags: ['颜色', '设计'],
-        url: '#',
-        icon: 'palette'
-      },
-      {
-        id: 5,
-        name: '正则测试',
-        description: '在线测试正则表达式，实时匹配高亮显示结果，提高开发效率。',
-        category: 'text',
-        tags: ['正则', '文本'],
-        url: '#',
-        icon: 'regex'
-      },
-      {
-        id: 6,
-        name: '二维码生成',
-        description: '将文本或链接转换为二维码图片，支持自定义样式与大小。',
-        category: 'image',
-        tags: ['二维码', '图片'],
-        url: '#',
-        icon: 'qrcode'
-      },
-      {
-        id: 7,
-        name: 'Markdown 编辑器',
-        description: '实时预览的 Markdown 编辑器，支持导出 HTML，适合快速排版。',
-        category: 'text',
-        tags: ['Markdown', '编辑器'],
-        url: '#',
-        icon: 'markdown'
-      },
-      {
-        id: 8,
-        name: '图片压缩',
-        description: '在线压缩图片文件大小，支持 PNG、JPG 格式，保持画质清晰。',
-        category: 'image',
-        tags: ['图片', '压缩'],
-        url: '#',
-        icon: 'image'
-      },
-      {
-        id: 9,
-        name: '密码生成器',
-        description: '生成高强度随机密码，可自定义长度和字符类型，保障账户安全。',
-        category: 'text',
-        tags: ['密码', '安全'],
-        url: '#',
-        icon: 'lock'
-      },
-      {
-        id: 10,
-        name: 'CSV 转 JSON',
-        description: '将 CSV 数据快速转换为 JSON 格式，支持自定义分隔符配置。',
-        category: 'converter',
-        tags: ['CSV', 'JSON'],
-        url: '#',
-        icon: 'table'
-      },
-      {
-        id: 11,
-        name: 'URL 编解码',
-        description: 'URL 编码与解码转换，正确处理特殊字符和中文，接口调试常用。',
-        category: 'encoder',
-        tags: ['URL', '编码'],
-        url: '#',
-        icon: 'link'
-      },
-      {
-        id: 12,
-        name: 'Diff 对比',
-        description: '文本差异对比工具，高亮显示两段文本的不同之处，代码审查利器。',
-        category: 'text',
-        tags: ['Diff', '对比'],
-        url: '#',
-        icon: 'diff'
-      }
+      // {
+      //   id: 2,
+      //   name: 'Base64 编解码',
+      //   description: '文本与 Base64 格式互相转换，支持 UTF-8 编码，适用于简单加密场景。',
+      //   category: 'encoder',
+      //   tags: ['Base64', '编码'],
+      //   url: '#',
+      //   icon: 'code'
+      // },
+      // {
+      //   id: 3,
+      //   name: '时间戳转换',
+      //   description: '时间戳与日期格式互相转换，支持多种日期格式，开发调试必备工具。',
+      //   category: 'converter',
+      //   tags: ['时间', '转换'],
+      //   url: '#',
+      //   icon: 'clock'
+      // },
+      // {
+      //   id: 4,
+      //   name: '颜色转换器',
+      //   description: 'HEX、RGB、HSL 等颜色格式互相转换，实时预览色值效果。',
+      //   category: 'converter',
+      //   tags: ['颜色', '设计'],
+      //   url: '#',
+      //   icon: 'palette'
+      // },
+      // {
+      //   id: 5,
+      //   name: '正则测试',
+      //   description: '在线测试正则表达式，实时匹配高亮显示结果，提高开发效率。',
+      //   category: 'text',
+      //   tags: ['正则', '文本'],
+      //   url: '#',
+      //   icon: 'regex'
+      // },
+      // {
+      //   id: 6,
+      //   name: '二维码生成',
+      //   description: '将文本或链接转换为二维码图片，支持自定义样式与大小。',
+      //   category: 'image',
+      //   tags: ['二维码', '图片'],
+      //   url: '#',
+      //   icon: 'qrcode'
+      // },
+      // {
+      //   id: 7,
+      //   name: 'Markdown 编辑器',
+      //   description: '实时预览的 Markdown 编辑器，支持导出 HTML，适合快速排版。',
+      //   category: 'text',
+      //   tags: ['Markdown', '编辑器'],
+      //   url: '#',
+      //   icon: 'markdown'
+      // },
+      // {
+      //   id: 8,
+      //   name: '图片压缩',
+      //   description: '在线压缩图片文件大小，支持 PNG、JPG 格式，保持画质清晰。',
+      //   category: 'image',
+      //   tags: ['图片', '压缩'],
+      //   url: '#',
+      //   icon: 'image'
+      // },
+      // {
+      //   id: 9,
+      //   name: '密码生成器',
+      //   description: '生成高强度随机密码，可自定义长度和字符类型，保障账户安全。',
+      //   category: 'text',
+      //   tags: ['密码', '安全'],
+      //   url: '#',
+      //   icon: 'lock'
+      // },
+      // {
+      //   id: 10,
+      //   name: 'CSV 转 JSON',
+      //   description: '将 CSV 数据快速转换为 JSON 格式，支持自定义分隔符配置。',
+      //   category: 'converter',
+      //   tags: ['CSV', 'JSON'],
+      //   url: '#',
+      //   icon: 'table'
+      // },
+      // {
+      //   id: 11,
+      //   name: 'URL 编解码',
+      //   description: 'URL 编码与解码转换，正确处理特殊字符和中文，接口调试常用。',
+      //   category: 'encoder',
+      //   tags: ['URL', '编码'],
+      //   url: '#',
+      //   icon: 'link'
+      // },
+      // {
+      //   id: 12,
+      //   name: 'Diff 对比',
+      //   description: '文本差异对比工具，高亮显示两段文本的不同之处，代码审查利器。',
+      //   category: 'text',
+      //   tags: ['Diff', '对比'],
+      //   url: '#',
+      //   icon: 'diff'
+      // }
     ];
 
     // 图标SVG映射
