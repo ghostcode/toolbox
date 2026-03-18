@@ -118,25 +118,32 @@
       transition: opacity 0.3s ease;
     }
 
-    /* 工具卡片 - Flex布局修改 */
+    /* 工具卡片 - 容器 */
     .tool-card {
+      position: relative;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    /* 卡片点击层 */
+    .tool-card-link {
+      display: flex;
+      flex-direction: column;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 1.5rem;
       backdrop-filter: blur(20px);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      transform-style: preserve-3d;
-      perspective: 1000px;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      /* 改为垂直Flex布局 */
-      height: 100%;
     }
 
-    .tool-card::before {
+    .tool-card-link::before {
       content: '';
       position: absolute;
       top: 0;
@@ -148,15 +155,16 @@
       transition: opacity 0.3s ease;
     }
 
-    .tool-card:hover::before {
-      opacity: 1;
-    }
-
-    .tool-card:hover {
+    /* Hover 效果 */
+    .tool-card:hover .tool-card-link {
       border-color: rgba(0, 212, 170, 0.3);
       box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 60px rgba(0, 212, 170, 0.1);
+    }
+
+    .tool-card:hover .tool-card-link::before {
+      opacity: 1;
     }
 
     .tool-card .icon-wrap {
@@ -196,7 +204,6 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       min-height: 2.5rem;
-      /* 保证两行高度的一致性 */
     }
 
     /* 标签 */
@@ -211,7 +218,7 @@
       transition: all 0.2s ease;
     }
 
-    .tag:hover {
+    .tool-card:hover .tag {
       background: var(--accent-dim);
       color: var(--accent);
     }
@@ -608,12 +615,12 @@
     const tools = [
       {
         id: 1,
-        name: 'JSON 格式化',
-        description: 'JSON 数据格式化、压缩、校验，支持语法高亮显示，方便阅读和排查问题。',
-        category: 'converter',
-        tags: ['JSON', '格式化'],
-        url: '#',
-        icon: 'json'
+        name: '图片分割',
+        description: '上传图片，自定义网格分割，一键导出所有切片。',
+        category: 'image',
+        tags: ['图片', '分割'],
+        url: 'https://image-splitter-six.vercel.app/',
+        icon: 'image'
       },
       {
         id: 2,
@@ -671,11 +678,11 @@
       },
       {
         id: 8,
-        name: '图片分割',
+        name: '图片压缩',
         description: '在线压缩图片文件大小，支持 PNG、JPG 格式，保持画质清晰。',
         category: 'image',
         tags: ['图片', '压缩'],
-        url: 'https://image-splitter-six.vercel.app/',
+        url: '#',
         icon: 'image'
       },
       {
@@ -760,21 +767,15 @@
 
       grid.innerHTML = filteredTools.map((tool, index) => `
         <article class="tool-card reveal visible" style="transition-delay: ${index * 0.05}s" data-id="${tool.id}">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24">${icons[tool.icon]}</svg>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">${tool.name}</h3>
-          <p class="text-sm text-[var(--muted)] leading-relaxed desc-clamp mb-4">${tool.description}</p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            ${tool.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-          </div>
-          <a href="${tool.url}" class="btn-secondary w-full justify-center mt-auto" aria-label="打开${tool.name}工具">
-            打开工具
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
+          <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="tool-card-link" aria-label="${tool.name}">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">${icons[tool.icon]}</svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">${tool.name}</h3>
+            <p class="text-sm text-[var(--muted)] leading-relaxed desc-clamp mb-4">${tool.description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              ${tool.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
           </a>
         </article>
       `).join('');
