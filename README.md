@@ -1,5 +1,3 @@
-这是一个为你的 ToolBox 项目生成的 `README.md` 文件，内容结构清晰，适合展示在 GitHub 仓库主页。
-
 # ToolBox - 开发者的效率利器
 
 <p align="center">
